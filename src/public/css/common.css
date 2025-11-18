@@ -1,0 +1,39 @@
+body {
+    background: linear-gradient(135deg, #fce4ec 0%, #afaeb0 50%, #d1c4e9 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+textarea::placeholder,
+input::placeholder {
+  color: #a3a3a2;
+}
+
+/* コンテンツ */
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  padding: 48px;
+}
+
+.content__heading {
+  text-align: center;
+  font-weight: 100;
+  font-size: 32px;
+  font-family: serif;
+}
+
+/* ボタン */
+.btn {
+  display: block;
+  padding: 8px 32px;
+  border: none;
+  background: linear-gradient(135deg, #fce4ec 0%, #afaeb0 50%, #d1c4e9 100%);
+  color: #FFF;
+  font-size: 16px;
+  cursor: pointer;
+}

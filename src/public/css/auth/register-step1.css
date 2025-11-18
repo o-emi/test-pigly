@@ -1,0 +1,126 @@
+body {
+  background: linear-gradient(to right, #fde7ef, #f2e7fb);
+  min-height: 100vh;
+}
+
+.content {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.register-form__inner {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.register-form__form {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+.register-form__form {
+    width: 60vw;
+  }
+}
+
+.register-form__group {
+  margin-bottom: 32px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.logo {
+    font-family: 'Georgia', serif;
+    font-size: 40px;
+    color: #e91e63;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.title {
+    font-size: 18px;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.step {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.register-form__label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.register-form__input {
+  display: block;
+  padding: 8px 12px;
+  width: 100%;
+  height: 48px;
+  border: none;
+  background-color: #F4F4F4;
+  font-family: serif;
+}
+
+.register-form__label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+    font-size: 14px;
+}
+
+.register-form__input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box; /* paddingをwidthに含める */
+    font-size: 16px;
+    color: #333;
+    opacity: 0.7;
+}
+
+/* 次へ進むボタン */
+.register-form__btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    /* 画像に見られるピンク〜パープルのグラデーション */
+    background: linear-gradient(to right, #e91e63, #9c27b0);
+    box-shadow: 0 4px 15px rgba(156, 39, 176, 0.4);
+    margin-top: 30px;
+    transition: transform 0.2s;
+}
+
+.register-form__btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(156, 39, 176, 0.6);
+}
+
+.login-btn {
+  color: #00bfff;
+  text-decoration: underline;
+  text-decoration-color: #00bfff;
+  font-weight: normal;
+  transition: color 0.3s;
+}
+
+.login-btn:hover {
+  color: #009acd;
+  text-decoration-color: #009acd;
+}
