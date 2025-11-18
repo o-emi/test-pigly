@@ -59,6 +59,9 @@ body {
 .register-form__label {
   display: block;
   margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+  font-size: 14px;
 }
 
 .register-form__input {
@@ -69,14 +72,6 @@ body {
   border: none;
   background-color: #F4F4F4;
   font-family: serif;
-}
-
-.register-form__label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #555;
-    font-size: 14px;
 }
 
 .register-form__input {
