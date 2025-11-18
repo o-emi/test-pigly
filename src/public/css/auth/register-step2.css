@@ -1,16 +1,21 @@
+body {
+  background: linear-gradient(to right, #fde7ef, #f2e7fb);
+  min-height: 100vh;
+}
+
 .content {
     width: 100%;
     max-width: 400px;
     padding: 20px;
 }
 
-.register-form__inner {
+.register-2-form__inner {
   display: flex;
   justify-content: center;
   margin-top: 48px;
 }
 
-.register-form__form {
+.register-2-form__form {
     background-color: white;
     padding: 40px 30px;
     border-radius: 20px;
@@ -19,25 +24,25 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .register-form__form {
+.register-form__form {
     width: 60vw;
   }
 }
 
-.register-form__group {
+.register-2-form__group {
   margin-bottom: 32px;
+  text-align: left;
+  margin-bottom: 20px;
 }
 
-
 .logo {
-    font-family: 'Georgia', serif; /* ロゴっぽいフォントを仮定 */
+    font-family: 'Georgia', serif;
     font-size: 40px;
-    color: #e91e63; /* 濃いピンク色 */
+    color: #e91e63;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-/* タイトルとステップ */
 .title {
     font-size: 18px;
     color: #333;
@@ -47,43 +52,29 @@
 
 .step {
     font-size: 14px;
-    color: #9c27b0; /* 紫系の色 */
+    color: #333;
     margin-bottom: 30px;
 }
 
-.register-form__label {
+.register-2-form__label {
   display: block;
   margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+  font-size: 14px;
 }
 
-.register-form__input {
+.register-2-form__input {
   display: block;
   padding: 8px 12px;
   width: 100%;
   height: 48px;
   border: none;
   background-color: #F4F4F4;
-  color: #BEB1A6;
   font-family: serif;
 }
 
-/* フォームグループ */
-.form-group {
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-/* ラベル (お名前、メールアドレスなど) */
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #555;
-    font-size: 14px;
-}
-
-/* 入力フィールド */
-.form-group input {
+.register-2-form__input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -91,12 +82,10 @@
     box-sizing: border-box; /* paddingをwidthに含める */
     font-size: 16px;
     color: #333;
-    /* プレースホルダーのスタイルを少し薄く */
     opacity: 0.7;
 }
 
-/* 次へ進むボタン */
-.next-button {
+.register-2-form__btn {
     width: 100%;
     padding: 12px;
     border: none;
@@ -105,30 +94,26 @@
     font-weight: bold;
     color: white;
     cursor: pointer;
-    /* 画像に見られるピンク〜パープルのグラデーション */
     background: linear-gradient(to right, #e91e63, #9c27b0);
     box-shadow: 0 4px 15px rgba(156, 39, 176, 0.4);
     margin-top: 30px;
     transition: transform 0.2s;
 }
 
-.next-button:hover {
+.register-2-form__btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(156, 39, 176, 0.6);
 }
 
-/* ログインはこちら リンク */
-.login-link {
-    margin-top: 20px;
-    font-size: 14px;
+.login-btn {
+  color: #00bfff;
+  text-decoration: underline;
+  text-decoration-color: #00bfff;
+  font-weight: normal;
+  transition: color 0.3s;
 }
 
-.login-link a {
-    color: #9c27b0; /* 紫系のリンク色 */
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.login-link a:hover {
-    text-decoration: underline;
+.login-btn:hover {
+  color: #009acd;
+  text-decoration-color: #009acd;
 }

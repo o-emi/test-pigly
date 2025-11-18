@@ -34,6 +34,16 @@ class FortifyServiceProvider extends ServiceProvider
             return view('auth.register');
         });
 
+        $this->app->singleton(RegisterResponse::class, function () {
+            return new class implements RegisterResponse {
+                public function toResponse($request)
+                {
+                    return redirect('/register/step2');
+                }
+            };
+        });
+
+
         Fortify::loginView(function () {
             return view('auth.login');
           });

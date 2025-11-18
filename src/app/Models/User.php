@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\WeightTarget;
+use App\Models\WeightLog;
+
+
 
 class User extends Authenticatable
 {
@@ -23,9 +27,9 @@ class User extends Authenticatable
         'password',
     ];
 
-    public function weightTarget()
+    public function weightTargets()
     {
-        return $this->hasOne(WeightTarget::class);
+        return $this->hasMany(WeightTarget::class);
     }
 
     public function weightLogs()
