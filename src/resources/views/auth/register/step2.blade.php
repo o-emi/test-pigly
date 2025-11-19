@@ -32,7 +32,7 @@
         </p>
       </div>
       <input class="register-2-form__btn btn" type="submit" value="アカウント作成">
-      <a href="/login" class="login-btn">ログインはこちら</a>
+      <a href="/login" class="login-link">ログインはこちら</a>
     </form>
     </div>
   </div>
