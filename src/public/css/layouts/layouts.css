@@ -1,0 +1,98 @@
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    background-color: #f7f7f7;
+    color: #4b4b4b;
+    margin: 0;
+    /* ログイン画面用の common.css にあった中央寄せ(flex)の指定はここでは外します */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* -------------------------
+   ヘッダーエリア
+------------------------- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header__heading {
+    font-size: 28px;
+    font-weight: bold;
+    color: #e597d2;
+    margin: 0;
+    letter-spacing: 0.05em;
+    font-family: serif;
+}
+
+/* ヘッダーメニュー */
+.header__menu {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.header__btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #666;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.header__btn:hover {
+    background-color: #f9f9f9;
+}
+
+.header__menu form {
+    margin: 0;
+}
+
+.logout-btn {
+    appearance: none;
+    font-family: inherit;
+    /* header__btnのスタイルを継承させるため、ボタンリセットが必要ならここに追記 */
+    background: none;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #666;
+    font-weight: bold;
+    font-size: 14px;
+}
+.logout-btn:hover {
+    background-color: #f9f9f9;
+}
+
+/* -------------------------
+   コンテンツラッパー
+------------------------- */
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}

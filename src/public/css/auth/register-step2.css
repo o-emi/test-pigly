@@ -1,119 +1,143 @@
 body {
-  background: linear-gradient(to right, #fde7ef, #f2e7fb);
-  min-height: 100vh;
+    font-family: "Noto Sans JP", sans-serif;
+    background: linear-gradient(135deg, #e0c3fc 0%, #ff9a9e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
 }
 
 .content {
     width: 100%;
-    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
 }
 
+.register-2-form {
+    width: 100%;
+    max-width: 400px;
+}
+
 .register-2-form__inner {
-  display: flex;
-  justify-content: center;
-  margin-top: 48px;
+    display: flex;
+    justify-content: center;
 }
 
 .register-2-form__form {
-    background-color: white;
-    padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 50px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     text-align: center;
-}
-
-@media screen and (max-width: 1200px) {
-.register-form__form {
-    width: 60vw;
-  }
-}
-
-.register-2-form__group {
-  margin-bottom: 32px;
-  text-align: left;
-  margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .logo {
-    font-family: 'Georgia', serif;
-    font-size: 40px;
-    color: #e91e63;
-    margin-bottom: 5px;
-    font-weight: bold;
+    font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", serif;
+    font-size: 36px;
+    color: #e597d2;
+    margin: 0 0 10px 0;
+    font-weight: normal;
+    letter-spacing: 0.05em;
 }
 
 .title {
-    font-size: 18px;
-    color: #333;
-    margin-top: 0;
-    margin-bottom: 30px;
+    font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", serif;
+    font-size: 20px;
+    color: #555;
+    margin: 0 0 20px 0;
+    font-weight: normal;
 }
 
 .step {
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 30px;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 40px;
+}
+
+.register-2-form__group {
+    margin-bottom: 20px;
+    text-align: left;
+    position: relative;
 }
 
 .register-2-form__label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-  color: #555;
-  font-size: 14px;
-}
-
-.register-2-form__input {
-  display: block;
-  padding: 8px 12px;
-  width: 100%;
-  height: 48px;
-  border: none;
-  background-color: #F4F4F4;
-  font-family: serif;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+    font-size: 13px;
 }
 
 .register-2-form__input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-sizing: border-box; /* paddingをwidthに含める */
-    font-size: 16px;
+    padding: 12px 40px 12px 12px; /* 右側に単位分の余白(40px)を確保 */
+    border: 1px solid #eee;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
     color: #333;
-    opacity: 0.7;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+
+.register-2-form__input:focus {
+    outline: none;
+    border-color: #e597d2;
+}
+
+.register-2-form__input::placeholder {
+    color: #ccc;
+}
+
+.unit {
+    position: absolute;
+    right: 15px;
+    top: 38px;
+    font-size: 14px;
+    color: #888;
+    pointer-events: none;
+}
+
+.register-2-form__error-message {
+    margin-top: 5px;
+    color: #e91e63;
+    font-size: 12px;
 }
 
 .register-2-form__btn {
-    width: 100%;
+    width: 200px;
+    display: block;
+    margin: 40px auto 20px;
     padding: 12px;
     border: none;
     border-radius: 25px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
     color: white;
     cursor: pointer;
-    background: linear-gradient(to right, #e91e63, #9c27b0);
-    box-shadow: 0 4px 15px rgba(156, 39, 176, 0.4);
-    margin-top: 30px;
-    transition: transform 0.2s;
+    background: linear-gradient(to right, #a18cd1 0%, #fbc2eb 100%);
+    box-shadow: 0 4px 10px rgba(161, 140, 209, 0.4);
+    transition: opacity 0.3s, transform 0.2s;
 }
 
 .register-2-form__btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(156, 39, 176, 0.6);
+    opacity: 0.9;
+    transform: translateY(-1px);
 }
 
-.login-btn {
-  color: #00bfff;
-  text-decoration: underline;
-  text-decoration-color: #00bfff;
-  font-weight: normal;
-  transition: color 0.3s;
+.login-link {
+    display: inline-block;
+    color: #8cabff;
+    text-decoration: underline;
+    font-size: 12px;
+    transition: color 0.3s;
 }
 
-.login-btn:hover {
-  color: #009acd;
-  text-decoration-color: #009acd;
+.login-link:hover {
+    color: #6b8dd6;
 }

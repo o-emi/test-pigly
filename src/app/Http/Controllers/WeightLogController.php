@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\LoginRequest;
+use App\Models\WeightLog;
+use App\Models\WeightTarget;
 use App\Models\User;
 use App\Http\Requests\RegisterStep1Request;
 use App\Http\Requests\RegisterStep2Request;
@@ -11,6 +14,23 @@ use Illuminate\Support\Facades\Auth;
 
 class WeightLogController extends Controller
 {
+    public function index(Request $request)
+    {
+      $query = WeightLog::query();
+        if ($request->filled('from')) $query->where('date', '>=', $request->from);
+        if ($request->filled('to')) $query->where('date', '<=', $request->to);
+
+        $weights = $query->orderBy('date', 'desc')->paginate(8);
+
+        $weightTarget = WeightTarget::first();
+        $latestWeightLog = WeightLog::latest('date')->first();
+
+        $latestWeight = $latestWeightLog?->weight;
+        $diffWeight = ($latestWeight && $weightTarget)? round($latestWeight - $weightTarget->weight, 1) : null;
+
+        return view('index', compact('weights', 'weightTarget', 'latestWeight', 'diffWeight'));
+    }
+
     public function showStep1()
     {
         return view('auth.register.step1');
@@ -44,6 +64,36 @@ class WeightLogController extends Controller
 
         $request->session()->forget('register.step1');
 
-        return redirect('/login');
+        return redirect('/');
     }
+
+    public function showLogin()
+    {
+        return view('auth.login');
+    }
+
+public function login(Request $request)
+{
+    $request->validate([
+        'email' => 'required|email',
+        'password' => 'required',
+    ], [
+        'email.required' => 'メールアドレスを入力してください',
+        'email.email' => 'メールアドレスは「ユーザ名＠ドメイン」形式で入力してください',
+        'password.required' => 'パスワードを入力してください',
+    ]);
+
+    $credentials = $request->only('email', 'password');
+
+    if (Auth::attempt($credentials)) {
+        $request->session()->regenerate();
+        return redirect('/');
+    }
+
+    return back()->withErrors([
+        'email' => 'メールアドレスかパスワードが違います',
+    ])->onlyInput('email');
+}
+
+
 }

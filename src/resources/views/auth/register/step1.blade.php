@@ -37,7 +37,7 @@
         </p>
       </div>
       <input class="register-form__btn btn" type="submit" value="次に進む">
-      <a href="/login" class="login-btn">ログインはこちら</a>
+      <a href="/login" class="login-link">ログインはこちら</a>
     </form>
     </div>
   </div>
