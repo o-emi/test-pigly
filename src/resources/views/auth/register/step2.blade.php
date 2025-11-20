@@ -20,7 +20,7 @@
         <input class="register-2-form__input" type="text" name="now_weight" id="weight" placeholder="現在の体重を入力">
         <span class="unit">kg</span>
         <p class="register-2-form__error-message">
-          @error('weight') {{ $message }} @enderror
+          @error('now_weight') {{ $message }} @enderror
         </p>
       </div>
       <div class="register-2-form__group">
@@ -28,7 +28,7 @@
         <input class="register-2-form__input" type="text" name="target_weight" id="weight" placeholder="目標の体重を入力">
         <span class="unit">kg</span>
         <p class="register-2-form__error-message">
-          @error('weight') {{ $message }} @enderror
+          @error('target_weight') {{ $message }} @enderror
         </p>
       </div>
       <input class="register-2-form__btn btn" type="submit" value="アカウント作成">

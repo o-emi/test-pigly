@@ -59,11 +59,15 @@
         <tbody>
           @foreach ($weights ?? [] as $w)
             <tr>
-              <td>{{ $w->date }}</td>
-              <td>{{ $w->weight }}kg</td>
-              <td>{{ $w->calorie }}cal</td>
-              <td>{{ $w->exercise_time }}</td>
-              <td><a href="/weight/{{ $w->id }}/edit" class="edit-icon">:pencil2:</a></td>
+              <td>{{ \Carbon\Carbon::parse($w->date)->format('Y/m/d') }}</td>
+              <td>{{ number_format($w->weight, 1) }}kg</td>
+              <td>{{ number_format($w->calorie) }}cal</td>
+              <td>{{ substr($w->exercise_time, 0, 5) }}</td>
+              <td>
+                <a href="/weight/{{ $w->id }}/edit" class="edit-icon">
+                <img src="{{ asset('images/pencil.png') }}" alt="編集" class="edit-icon-img">
+                </a>
+              </td>
             </tr>
           @endforeach
         </tbody>

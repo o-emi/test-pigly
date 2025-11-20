@@ -52,6 +52,7 @@ class WeightLogController extends Controller
 
     public function postStep2(RegisterStep2Request $request)
     {
+      dd($request->all());
         $step1Data = $request->session()->get('register.step1');
 
         $user = User::create([
@@ -60,7 +61,11 @@ class WeightLogController extends Controller
             'password' => Hash::make($step1Data['password']),
         ]);
 
-        $user->weightTargets()->create($request->validated());
+        $user->weightTargets()->create(['target_weight' => $request->target_weight]);
+        $user->weightLogs()->create([
+        'weight' => $request->now_weight,
+        'date' => now()
+        ]);
 
         $request->session()->forget('register.step1');
 
