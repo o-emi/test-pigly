@@ -1,0 +1,176 @@
+/* --- 0. データ追加ボタンのスタイリング (管理画面に表示) --- */
+.add-data-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 20px 0;
+  background-color: #a37df0; /* モーダルボタンと同じ紫色 */
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-data-button:hover {
+  background-color: #8c68d8;
+}
+
+/* --- 1. モーダルウィンドウの基本設定と非表示状態 --- */
+.modal-window {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* 初期状態では完全に非表示 */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none; /* 非表示時に背後の要素をクリック可能にする */
+  transition: opacity 0.3s, visibility 0.3s; /* フェードイン・アウト効果 */
+  z-index: 1000;
+}
+
+/* 2. :target で表示状態を切り替える */
+/* URLのフラグメントが #weightLogModal の場合、スタイルを適用 */
+.modal-window:target {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto; /* 表示時にクリックイベントを有効化 */
+}
+
+/* --- 3. オーバーレイ（半透明の背景） --- */
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* --- 4. モーダルコンテンツ (フォーム本体) --- */
+.modal-content {
+  background-color: #fefefe;
+  /* 画面中央寄せ */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px; /* 角を丸く */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 1001;
+}
+
+/* --- 5. フォーム要素のスタイリング --- */
+.modal-header h2 {
+  margin-top: 0;
+  font-size: 1.5em;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 0.95em;
+  color: #555;
+}
+
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group input[type="time"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* paddingとborderを幅に含める */
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* 単位付き入力欄のレイアウト */
+.input-with-unit {
+  display: flex;
+  align-items: center;
+}
+
+.input-with-unit input {
+  flex-grow: 1;
+  margin-right: 5px; /* 単位との間に少しスペース */
+}
+
+.input-with-unit span {
+    font-weight: bold;
+    color: #666;
+}
+
+/* --- 6. アクションボタンのスタイリング --- */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none; /* aタグの線を消す */
+  display: inline-block;
+  text-align: center;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+/* 登録ボタン (Primary) */
+.btn-primary {
+  background-color: #a37df0; /* 紫 */
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #8c68d8;
+}
+
+/* 戻るボタン (Secondary) */
+.btn-secondary {
+  background-color: #e0e0e0; /* 灰色 */
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background-color: #cccccc;
+}
+
+/* --- 7. スマートフォン対応 (必要に応じて) --- */
+@media (max-width: 600px) {
+    .modal-content {
+        width: 95%;
+        margin: 5% auto; /* スマホでは上部に寄せる */
+    }
+    .modal-actions {
+        /* スマホではボタンを横幅いっぱいに */
+        flex-direction: column;
+        gap: 8px;
+    }
+    .btn {
+        width: 100%;
+    }
+}

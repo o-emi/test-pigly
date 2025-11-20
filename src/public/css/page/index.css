@@ -114,6 +114,7 @@
 .weight-table__area td {
     padding: 20px 10px;
     text-align: center;
+    vertical-align: middle; /* 上下中央揃え */
 }
 
 .weight-table__area th {
@@ -130,9 +131,16 @@
 }
 
 .edit-icon {
-    color: #c490d6;
-    font-size: 18px;
     text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.3s;
+    vertical-align: middle;
+}
+
+.edit-icon-img {
+    width: 20px;  /* アイコンのサイズ指定 */
+    height: auto;
+    display: block;
 }
 
 .pagination {
@@ -140,7 +148,44 @@
     justify-content: center;
     margin-top: 20px;
 }
+
 .pagination nav {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
+    width: 100%;
 }
+
+.pagination p {
+    display: none !important; /* ← ここで「Showing...」の<p>タグを非表示 */
+}
+
+.pagination .sm\:hidden {
+    display: none !important; /* ← ここで文字の「« 前 次 »」を非表示 */
+}
+
+.pagination svg {
+    width: 20px;
+    height: 20px;
+    color: #888;
+}
+
+.pagination a,
+.pagination span {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    margin: 0 3px;
+    font-size: 14px;
+    color: #666;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px !important;
+}
+
+
+
